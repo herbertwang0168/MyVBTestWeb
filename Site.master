@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
@@ -21,31 +21,45 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">登入</a> ]
+                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">登入</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        歡迎 <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="登出" LogoutPageUrl="~/"/> ]
+                        歡迎 <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="登出"
+                            LogoutPageUrl="~/" />
+                        ]
                     </LoggedInTemplate>
                 </asp:LoginView>
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="首頁"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="關於"/>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="首頁" />
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="關於" />
+                        <asp:MenuItem Text="JavaScript">
+                            <asp:MenuItem NavigateUrl="~/OpenWindow.aspx" Text="浮動視窗" />
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Bootstrap">
+                            <asp:MenuItem NavigateUrl="~/BootstrapTest.aspx" Text="Bootstrqp1" />
+                            <asp:MenuItem NavigateUrl="~/BootstrapTest2.aspx" Text="Bootstrqp2" />
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Asp Ajax">
+                        <asp:MenuItem NavigateUrl="~/VBAjax_SendMail.aspx" Text="Ajax1" />
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
         </div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
         <div class="clear">
         </div>
     </div>
     <div class="footer">
-        
     </div>
     </form>
 </body>

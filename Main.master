@@ -24,5 +24,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <asp:ContentPlaceHolder ID="foot" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 </html>

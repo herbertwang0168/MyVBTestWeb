@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Main.master" AutoEventWireup="false"
-    CodeFile="OpenWindow.aspx.vb" Inherits="OpenWindow" %>
+    CodeFile="OpenWindow.aspx.vb" Inherits="Javascript_OpenWindow" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -22,14 +22,6 @@
             z-index: 100;
         }
     </style>
-    <script type="text/javascript">
-
-
-        $(document).ready(function () {
-
-
-        });
-    </script>
     <script type="text/javascript">
         //點鼠標 出現 浮動視窗 http://chan15.blogspot.com/2011/12/blog-post.html
         $(function () {
@@ -68,7 +60,7 @@
         });
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContents" runat="Server">
     <div style="border: 1px solid blue; padding: 10px; width: 1900px; height: 1200px;">
         <div style="border: 1px solid red; width: 300px; height: 200px;">
             test1
@@ -77,7 +69,6 @@
         </div>
         <a href="#" name="btn">click me</a>
     </div>
-
     <div id="warnings" style="position: absolute; width: 150px; height: 150px; background-color: #d0d0ff;">
         簡單製作浮動視窗置底功能
     </div>

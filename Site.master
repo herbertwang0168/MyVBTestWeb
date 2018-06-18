@@ -39,15 +39,16 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="首頁" />
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="關於" />
-                        <asp:MenuItem Text="JavaScript">
-                            <asp:MenuItem NavigateUrl="~/OpenWindow.aspx" Text="浮動視窗" />
+                        <asp:MenuItem Text="OfficePDF">
+                            <asp:MenuItem NavigateUrl="~/OfficePDF/HtmlToPdf.aspx" Text="HtmlToPdf" />
                         </asp:MenuItem>
                         <asp:MenuItem Text="Bootstrap">
-                            <asp:MenuItem NavigateUrl="~/BootstrapTest.aspx" Text="Bootstrqp1" />
-                            <asp:MenuItem NavigateUrl="~/BootstrapTest2.aspx" Text="Bootstrqp2" />
+                            <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest.aspx" Text="BootstrapTest" />
+                            <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest2.aspx" Text="BootstrapTest2" />
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Asp Ajax">
-                        <asp:MenuItem NavigateUrl="~/VBAjax_SendMail.aspx" Text="Ajax1" />
+                        <asp:MenuItem Text="JavaScript">
+                        <asp:MenuItem NavigateUrl="~/Javascript/VBAjax_SendMail.aspx" Text="VBAjax_SendMail" />
+                        <asp:MenuItem NavigateUrl="~/Javascript/OpenWindow.aspx" Text="浮動視窗" />
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>

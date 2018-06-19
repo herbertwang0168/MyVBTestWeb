@@ -12,18 +12,57 @@
   <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
   <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <%--<script src="../Scripts/jquery-2.2.4.min.js" type="text/javascript"></script>--%>
+    <script src="../Scripts/CastleBusyBox.js" type="text/javascript"></script>
     <script src="../Scripts/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="../Scripts/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.blockUI.js" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body topmargin="0" leftmargin="5" rightmargin="0" bottommargin="0" onbeforeunload="busyBox.Show();">
+    <iframe id="BusyBoxIFrame" name="BusyBoxIFrame" frameborder="0" scrolling="no" onunload="return false;"
+        language="javascript"></iframe>
+    <script language="javascript" type="text/javascript">
+        // Instantiate our BusyBox object
+        // BusyBox(id, varName, imageCount, imageNamePrefix, imageNameSuffix, imageDelay, width, height, url)
+        var busyBox = new BusyBox("BusyBoxIFrame", "busyBox", 1, "../images/ajax-loader_", ".gif", 125, 200, 200);
+    </script>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="bodyContents" runat="server">
-        </asp:ContentPlaceHolder>
+    <asp:ScriptManager ID="ScriptManager1" runat="Server" EnablePartialRendering="true"
+        EnableScriptGlobalization="true" EnableScriptLocalization="true" />
+    <div style="width: 1000; height: 1000; border: 1px solid blue; margin: 0 auto; overflow: hidden;">
+        <div style="float: right; width: 1000px; height: 500px; background: green;">
+            <asp:ContentPlaceHolder ID="bodyContents" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </div>
     </form>
+    <script type="text/javascript">
+        //取得PageRequestManager類別的執行個體 
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        //設定引發 initializeRequest 執行函數
+        prm.add_initializeRequest(InitializeRequest);
+        //設定引發 endRequest 執行函數
+        prm.add_endRequest(EndRequest);
+
+        function InitializeRequest(sender, args) {
+            console.log('InitializeRequest1111111');
+//            debugger;
+            //busyBox.Show();
+            $.blockUI();
+
+        }
+        function EndRequest(sender, args) {
+            console.log('EndRequest22222222222222');
+//            debugger;
+            $.unblockUI();
+            //busyBox.Hide();
+            //            setDivHeight();
+            //setDataAreaHeight();
+        }
+    </script>
     <asp:ContentPlaceHolder ID="foot" runat="server">
     </asp:ContentPlaceHolder>
 </body>

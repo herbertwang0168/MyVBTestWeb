@@ -50,6 +50,9 @@
                         <asp:MenuItem NavigateUrl="~/Javascript/VBAjax_SendMail.aspx" Text="VBAjax_SendMail" />
                         <asp:MenuItem NavigateUrl="~/Javascript/OpenWindow.aspx" Text="浮動視窗" />
                         </asp:MenuItem>
+                        <asp:MenuItem Text="ASP.NET">
+                        <asp:MenuItem NavigateUrl="~/AspNet/ASPNET_block.aspx" Text="block" />
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

@@ -5,7 +5,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>富邦人壽預約諮詢服務</title>
+    <title>XX人壽預約諮詢服務</title>
     <link type="text/css" href="Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
         form
@@ -86,8 +86,8 @@
             'nameError': '請填寫您的姓名',
             'phoneError': '請填寫聯絡電話',
             'phoneFormatError': '聯絡電話格式不正確，請重新輸入',
-            'isCustError': '請選擇是否為富邦保戶',
-            'idRequiredError': '富邦保戶請填寫身分證字號或護照號碼',
+            'isCustError': '請選擇是否為XX保戶',
+            'idRequiredError': 'XX保戶請填寫身分證字號或護照號碼',
             'idFormatError': '身分證字號或護照號碼格式不正確，請重新輸入',
             'serviceTypeError': '請選擇您需要的服務類型',
             'contactTimeError': '請選擇您方便的聯絡時段',
@@ -228,7 +228,7 @@
 
         //當request(SC)=null
         function goto() {
-            alert('此網頁功能關閉，若您有需要預約回電，\n敬請由富邦人壽官網或保戶會員專區登入，\n請稍候，將為您導入富邦人壽官網。');
+            alert('此網頁功能關閉，若您有需要預約回電，\n敬請由XX人壽官網或保戶會員專區登入，\n請稍候，將為您導入XX人壽官網。');
             window.open('https://www.fubon.com/life/home/index.htm', '_blank', '');
             window.opener = null;
             window.close();
@@ -288,7 +288,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <label for="IsFubonCustomer">
-                                        是否為富邦保戶</label>
+                                        是否為XX保戶</label>
                                     <span style="color: red;">*</span>
                                 </div>
                             </div>

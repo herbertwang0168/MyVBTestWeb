@@ -108,7 +108,7 @@ public partial class _Recall_Form : System.Web.UI.Page
     }
 
     /// <summary>
-    /// 是否勾選「是否為富邦保戶」選項
+    /// 是否勾選「是否為XX保戶」選項
     /// </summary>
     private bool HasCheckedIsFubonCustomer
     {
@@ -119,7 +119,7 @@ public partial class _Recall_Form : System.Web.UI.Page
     }
 
     /// <summary>
-    /// 是否為富邦保戶
+    /// 是否為XX保戶
     /// </summary>
     private bool IsFubonCustomer
     {
@@ -202,14 +202,14 @@ public partial class _Recall_Form : System.Web.UI.Page
 
             if (!this.HasCheckedIsFubonCustomer)
             {
-                throw new ArgumentNullException("請選擇是否為富邦保戶");
+                throw new ArgumentNullException("請選擇是否為XX保戶");
             }
 
             if (this.IsFubonCustomer)
             {
                 if (String.IsNullOrEmpty(this.CustomerId))
                 {
-                    throw new ArgumentNullException("富邦保戶請填寫身分證字號");
+                    throw new ArgumentNullException("XX保戶請填寫身分證字號");
                 }
                 else if (!this.CheckId(this.CustomerId))
                 {
@@ -373,7 +373,7 @@ public partial class _Recall_Form : System.Web.UI.Page
         string sContent = string.Format(@" 
 姓名：{0}
 連絡電話：{1}
-是否為富邦保戶：{2}
+是否為XX保戶：{2}
 身分證字號：{3}
 服務類型：{4}
 方便聯絡時段：{5}

@@ -52,6 +52,8 @@
                         </asp:MenuItem>
                         <asp:MenuItem Text="ASP.NET">
                         <asp:MenuItem NavigateUrl="~/AspNet/ASPNET_block.aspx" Text="block" />
+                        <asp:MenuItem NavigateUrl="~/AspNet/DropDownlistTest.aspx" Text="DropDownlist" />
+                        <asp:MenuItem NavigateUrl="~/AspNet/TestNoMain.aspx" Text="NoMain" />
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>

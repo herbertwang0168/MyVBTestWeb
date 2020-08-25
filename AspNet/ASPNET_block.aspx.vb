@@ -5,7 +5,10 @@ Partial Class AspNet_ASPNET_block
     Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
 
         If Page.IsPostBack = False Then '判斷是否第一次執行
-
+            Dim str As String(3)
+            str(0) = "a12"
+            str(1) = "b12"
+            str(2) = "c12"
 
 
         End If

@@ -11,62 +11,62 @@
 </head>
 <body>
     <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    我的 ASP.NET 應用程式
-                </h1>
-            </div>
-            <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">登入</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        歡迎 <span class="bold">
-                            <asp:LoginName ID="HeadLoginName" runat="server" />
-                        </span>! [
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>我的 ASP.NET 應用程式
+                    </h1>
+                </div>
+                <div class="loginDisplay">
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">登入</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            歡迎 <span class="bold">
+                                <asp:LoginName ID="HeadLoginName" runat="server" />
+                            </span>! [
                         <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="登出"
                             LogoutPageUrl="~/" />
-                        ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
+                            ]
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+                <div class="clear hideSkiplink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                        IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="首頁" />
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="關於" />
+                            <asp:MenuItem Text="OfficePDF">
+                                <asp:MenuItem NavigateUrl="~/OfficePDF/HtmlToPdf.aspx" Text="HtmlToPdf" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Bootstrap">
+                                <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest.aspx" Text="BootstrapTest" />
+                                <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest2.aspx" Text="BootstrapTest2" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="JavaScript">
+                                <asp:MenuItem NavigateUrl="~/Javascript/VBAjax_SendMail.aspx" Text="VBAjax_SendMail" />
+                                <asp:MenuItem NavigateUrl="~/Javascript/OpenWindow.aspx" Text="浮動視窗" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ASP.NET">
+                                <asp:MenuItem NavigateUrl="~/AspNet/ASPNET_block.aspx" Text="block" />
+                                <asp:MenuItem NavigateUrl="~/AspNet/DropDownlistTest.aspx" Text="DropDownlist" />
+                                <asp:MenuItem NavigateUrl="~/AspNet/TestNoMain.aspx" Text="TestNoMain" />
+                                <asp:MenuItem NavigateUrl="~/AspNet/TestCombine2Table.aspx" Text="TestCombine2Table" />
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
             </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
-                    IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="首頁" />
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="關於" />
-                        <asp:MenuItem Text="OfficePDF">
-                            <asp:MenuItem NavigateUrl="~/OfficePDF/HtmlToPdf.aspx" Text="HtmlToPdf" />
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Bootstrap">
-                            <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest.aspx" Text="BootstrapTest" />
-                            <asp:MenuItem NavigateUrl="~/Bootstrap/BootstrapTest2.aspx" Text="BootstrapTest2" />
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="JavaScript">
-                        <asp:MenuItem NavigateUrl="~/Javascript/VBAjax_SendMail.aspx" Text="VBAjax_SendMail" />
-                        <asp:MenuItem NavigateUrl="~/Javascript/OpenWindow.aspx" Text="浮動視窗" />
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="ASP.NET">
-                        <asp:MenuItem NavigateUrl="~/AspNet/ASPNET_block.aspx" Text="block" />
-                        <asp:MenuItem NavigateUrl="~/AspNet/DropDownlistTest.aspx" Text="DropDownlist" />
-                        <asp:MenuItem NavigateUrl="~/AspNet/TestNoMain.aspx" Text="NoMain" />
-                        </asp:MenuItem>
-                    </Items>
-                </asp:Menu>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear">
             </div>
         </div>
-        <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        <div class="footer">
         </div>
-        <div class="clear">
-        </div>
-    </div>
-    <div class="footer">
-    </div>
     </form>
 </body>
 </html>

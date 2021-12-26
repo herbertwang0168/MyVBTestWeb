@@ -10,6 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <a href="~/AspNet/TestCombine2Table.aspx">重整</a>
         </div>
     </form>
 </body>

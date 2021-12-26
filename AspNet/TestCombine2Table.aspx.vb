@@ -70,7 +70,7 @@ Partial Class AspNet_TestCombine2Table
             REM End Dt2
 
             Dim Dt3 As New DataTable
-
+            Dim Dt4 As New DataTable
 
             Dim JoinedDT As New DataTable
             JoinedDT.Columns.Add("ID", GetType(Integer))
@@ -103,9 +103,20 @@ Partial Class AspNet_TestCombine2Table
                                                               End Function)
 
             Dt3 = query.CopyToDataTable()
+            For Each row As DataRow In Dt3.Rows
+                Dim str1 As String = row("ID").ToString
 
+            Next
 
-
+            '====================================================
+            Using conn As SqlClient.SqlConnection = New SqlClient.SqlConnection("Data Source=.;Initial Catalog=Northwind;Persist Security Info=True;User ID=sa;Password=!QAZ2wsx;")
+                Dim comm As SqlClient.SqlCommand = New SqlClient.SqlCommand("select * from Customers", conn)
+                Using sqlAdapter As SqlClient.SqlDataAdapter = New SqlClient.SqlDataAdapter(comm)
+                    sqlAdapter.Fill(Dt3)
+                    comm = New SqlClient.SqlCommand("select * from Customers", conn)
+                    sqlAdapter.Fill(Dt4)
+                End Using
+            End Using
 
 
         End If
